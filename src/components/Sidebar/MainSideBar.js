@@ -15,7 +15,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 
 import SubSidebar from "./SubSidebar";
 
@@ -83,6 +83,15 @@ const MainSideBar = () => {
                     { name: "A 7" },
                     { name: "A 8" },
                     { name: "A 9" },
+                    { name: "A 1" },
+                    { name: "A 2" },
+                    { name: "A 3" },
+                    { name: "A 4" },
+                    { name: "A 5" },
+                    { name: "A 6" },
+                    { name: "A 7" },
+                    { name: "A 8" },
+                    { name: "A 9" },
                   ],
                 },
                 {
@@ -125,6 +134,71 @@ const MainSideBar = () => {
                     { name: "D 7" },
                     { name: "D 8" },
                     { name: "D 9" },
+                  ],
+                },
+                {
+                  name: "E",
+                  sub_list: [
+                    { name: "E 1" },
+                    { name: "E 2" },
+                    { name: "E 3" },
+                    { name: "E 4" },
+                    { name: "E 5" },
+                    { name: "E 6" },
+                    { name: "E 7" },
+                    { name: "E 8" },
+                    { name: "E 9" },
+                    { name: "E 1" },
+                    { name: "E 2" },
+                    { name: "E 3" },
+                    { name: "E 4" },
+                    { name: "E 5" },
+                    { name: "E 6" },
+                    { name: "E 7" },
+                    { name: "E 8" },
+                    { name: "E 9" },
+                  ],
+                },
+                {
+                  name: "F",
+                  sub_list: [
+                    { name: "F 1" },
+                    { name: "F 2" },
+                    { name: "F 3" },
+                    { name: "F 4" },
+                    { name: "F 5" },
+                    { name: "F 6" },
+                    { name: "F 7" },
+                    { name: "F 8" },
+                    { name: "F 9" },
+                  ],
+                },
+                {
+                  name: "G",
+                  sub_list: [
+                    { name: "G 1" },
+                    { name: "G 2" },
+                    { name: "G 3" },
+                    { name: "G 4" },
+                    { name: "G 5" },
+                    { name: "G 6" },
+                    { name: "G 7" },
+                    { name: "G 8" },
+                    { name: "G 9" },
+                  ],
+                },
+                {
+                  name: "H",
+                  sub_list: [
+                    { name: "H 1" },
+                    { name: "H 2" },
+                    { name: "H 3" },
+                    { name: "H 4" },
+                    { name: "H 5" },
+                    { name: "H 6" },
+                    { name: "H 7" },
+                    { name: "H 8" },
+                    { name: "H 9" },
                   ],
                 },
               ].map((data, index) => (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 
 import Header from "../Header/Header";
@@ -19,13 +19,18 @@ import MailIcon from "@mui/icons-material/Mail";
 const drawerWidth = 180;
 
 const SubSidebar = (props) => {
+  const [state, setstate] = useState(true);
+
+  console.log(state)
+
   return (
     <>
       {props.list ? (
         <>
           <Drawer
-            open={true}
+            open={state}
             variant="persistent"
+            key={props.name}
             sx={{
               width: drawerWidth,
               flexShrink: 0,
@@ -47,6 +52,7 @@ const SubSidebar = (props) => {
                         <ListItem
                           button
                           key={text}
+                          sy={{ boxShadow: 2 }}
                           style={{ fontSize: "48px" }}
                         >
                           <div
@@ -70,6 +76,30 @@ const SubSidebar = (props) => {
                     )}
                   </>
                 ))}
+
+                {/*  */}
+                <ListItem
+                  onClick={() => {
+                    setstate(false);
+                  }}
+                  button
+                  sy={{ boxShadow: 2 }}
+                  style={{ fontSize: "48px" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      padding: "0 0.3rem",
+                    }}
+                  >
+                    <ListItemIcon>
+                      <MailIcon />
+                    </ListItemIcon>
+                    <ListItemText>CLOSE</ListItemText>
+                  </div>
+                </ListItem>
+                {/*  */}
               </List>
             </Box>
           </Drawer>
@@ -77,84 +107,6 @@ const SubSidebar = (props) => {
       ) : (
         <></>
       )}
-
-      {/* DRAWER */}
-      {/* <Drawer
-        open={true}
-        variant="persistent"
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          [`& .MuiDrawer-paper`]: {
-            width: drawerWidth,
-            boxSizing: "border-box",
-            marginLeft: "110px",
-            zIndex: "999",
-          },
-        }}
-      >
-        <Toolbar />
-        <Box sx={{ overflow: "auto" }} style={{ marginTop: "5%" }}>
-          <List>
-            {[
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-              { name: "NAME 1" },
-            ].map((text, index) => (
-              <>
-                {props.list === index ? (
-                  <>
-                    <ListItem
-                      button
-                      key={text}
-                      style={{ fontSize: "48px" }}
-                      className={`${classes.listStyle} ${classes.sideBarIconSyle}`}
-                    >
-                      <MailIcon />
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          padding: "0 10px",
-                        }}
-                      >
-                        <span style={{ fontSize: "18px" }}>{index}</span>
-                      </div>
-                    </ListItem>
-                    <Divider />
-                  </>
-                ) : (
-                  <></>
-                )}
-              </>
-            ))}
-          </List>
-        </Box>
-      </Drawer> */}
-
-      {/* DRAWER */}
     </>
   );
 };
