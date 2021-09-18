@@ -205,7 +205,7 @@ const MainSideBar = () => {
                 <>
                   <ListItem
                     button
-                    key={data}
+                    key={index}
                     onClick={() => {
                       setlistIndex(data);
                     }}

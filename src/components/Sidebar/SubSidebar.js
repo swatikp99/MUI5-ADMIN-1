@@ -51,7 +51,7 @@ const SubSidebar = (props) => {
                       <>
                         <ListItem
                           button
-                          key={text}
+                          key={index}
                           sy={{ boxShadow: 2 }}
                           style={{ fontSize: "48px" }}
                         >

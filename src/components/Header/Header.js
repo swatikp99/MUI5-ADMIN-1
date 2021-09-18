@@ -21,7 +21,7 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, boxShadow: 0 }}>
       <AppBar
         className={classes.appBar}
         position="fixed"
