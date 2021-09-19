@@ -68,7 +68,13 @@ const MainSideBar = () => {
           }}
         >
           <Toolbar />
-          <Box sx={{ overflow: "auto" }} style={{ marginTop: "5%" }}>
+          <Box
+            sx={{
+              overflow: "auto",
+              boxShadow: 1,
+            }}
+            style={{ marginTop: "2%" }}
+          >
             <List>
               {[
                 {
@@ -212,7 +218,10 @@ const MainSideBar = () => {
                     style={{ fontSize: "48px", padding: "1rem" }}
                     className={`${classes.listStyle} ${classes.sideBarIconSyle}`}
                   >
-                    <DashboardOutlinedIcon style={{ fontSize: "2rem" }} />
+                    <DashboardOutlinedIcon
+                      sx={{ color: "primary.main" }}
+                      style={{ fontSize: "2rem" }}
+                    />
                     <div
                       style={{
                         display: "flex",

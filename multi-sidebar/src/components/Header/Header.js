@@ -25,8 +25,11 @@ const Header = () => {
       <AppBar
         className={classes.appBar}
         position="fixed"
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        style={{ backgroundColor: "#ffffff" }}
+        sx={{
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+          boxShadow: 1,
+          color: "primary.main",
+        }}
       >
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
