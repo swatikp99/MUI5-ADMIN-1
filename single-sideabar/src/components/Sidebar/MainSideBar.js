@@ -15,9 +15,16 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 
-import SubSidebar from "./SubSidebar";
+// * ICONS
+
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
+import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
+import RestaurantMenuOutlinedIcon from "@mui/icons-material/RestaurantMenuOutlined";
+import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
+import StreetviewOutlinedIcon from "@mui/icons-material/StreetviewOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 
 const drawerWidth = 110;
 const MainSideBar = () => {
@@ -78,134 +85,67 @@ const MainSideBar = () => {
             <List>
               {[
                 {
-                  name: "A",
-                  sub_list: [
-                    { name: "A 1" },
-                    { name: "A 2" },
-                    { name: "A 3" },
-                    { name: "A 4" },
-                    { name: "A 5" },
-                    { name: "A 6" },
-                    { name: "A 7" },
-                    { name: "A 8" },
-                    { name: "A 9" },
-                    { name: "A 1" },
-                    { name: "A 2" },
-                    { name: "A 3" },
-                    { name: "A 4" },
-                    { name: "A 5" },
-                    { name: "A 6" },
-                    { name: "A 7" },
-                    { name: "A 8" },
-                    { name: "A 9" },
-                  ],
+                  name: "DASHBOARD",
+                  icon: (
+                    <DashboardOutlinedIcon
+                      sx={{ color: "primary.main" }}
+                      style={{ fontSize: "2rem" }}
+                    />
+                  ),
                 },
                 {
-                  name: "B",
-                  sub_list: [
-                    { name: "B 1" },
-                    { name: "B 2" },
-                    { name: "B 3" },
-                    { name: "B 4" },
-                    { name: "B 5" },
-                    { name: "B 6" },
-                    { name: "B 7" },
-                    { name: "B 8" },
-                    { name: "B 9" },
-                  ],
+                  name: "CATEGORY",
+                  icon: (
+                    <FormatListBulletedOutlinedIcon
+                      sx={{ color: "primary.main" }}
+                      style={{ fontSize: "2rem" }}
+                    />
+                  ),
                 },
                 {
-                  name: "C",
-                  sub_list: [
-                    { name: "C 1" },
-                    { name: "C 2" },
-                    { name: "C 3" },
-                    { name: "C 4" },
-                    { name: "C 5" },
-                    { name: "C 6" },
-                    { name: "C 7" },
-                    { name: "C 8" },
-                    { name: "C 9" },
-                  ],
+                  name: "MENU",
+                  icon: (
+                    <RestaurantMenuOutlinedIcon
+                      sx={{ color: "primary.main" }}
+                      style={{ fontSize: "2rem" }}
+                    />
+                  ),
                 },
                 {
-                  name: "D",
-                  sub_list: [
-                    { name: "D 1" },
-                    { name: "D 2" },
-                    { name: "D 3" },
-                    { name: "D 4" },
-                    { name: "D 5" },
-                    { name: "D 6" },
-                    { name: "D 7" },
-                    { name: "D 8" },
-                    { name: "D 9" },
-                  ],
+                  name: "ORDERS",
+                  icon: (
+                    <NotificationsActiveOutlinedIcon
+                      sx={{ color: "primary.main" }}
+                      style={{ fontSize: "2rem" }}
+                    />
+                  ),
                 },
                 {
-                  name: "E",
-                  sub_list: [
-                    { name: "E 1" },
-                    { name: "E 2" },
-                    { name: "E 3" },
-                    { name: "E 4" },
-                    { name: "E 5" },
-                    { name: "E 6" },
-                    { name: "E 7" },
-                    { name: "E 8" },
-                    { name: "E 9" },
-                    { name: "E 1" },
-                    { name: "E 2" },
-                    { name: "E 3" },
-                    { name: "E 4" },
-                    { name: "E 5" },
-                    { name: "E 6" },
-                    { name: "E 7" },
-                    { name: "E 8" },
-                    { name: "E 9" },
-                  ],
+                  name: "DESIGN",
+                  icon: (
+                    <StreetviewOutlinedIcon
+                      sx={{ color: "primary.main" }}
+                      style={{ fontSize: "2rem" }}
+                    />
+                  ),
                 },
                 {
-                  name: "F",
-                  sub_list: [
-                    { name: "F 1" },
-                    { name: "F 2" },
-                    { name: "F 3" },
-                    { name: "F 4" },
-                    { name: "F 5" },
-                    { name: "F 6" },
-                    { name: "F 7" },
-                    { name: "F 8" },
-                    { name: "F 9" },
-                  ],
+                  name: "SETTINGS",
+                  icon: (
+                    <SettingsOutlinedIcon
+                      sx={{ color: "primary.main" }}
+                      style={{ fontSize: "2rem" }}
+                    />
+                  ),
                 },
                 {
-                  name: "G",
-                  sub_list: [
-                    { name: "G 1" },
-                    { name: "G 2" },
-                    { name: "G 3" },
-                    { name: "G 4" },
-                    { name: "G 5" },
-                    { name: "G 6" },
-                    { name: "G 7" },
-                    { name: "G 8" },
-                    { name: "G 9" },
-                  ],
-                },
-                {
-                  name: "H",
-                  sub_list: [
-                    { name: "H 1" },
-                    { name: "H 2" },
-                    { name: "H 3" },
-                    { name: "H 4" },
-                    { name: "H 5" },
-                    { name: "H 6" },
-                    { name: "H 7" },
-                    { name: "H 8" },
-                    { name: "H 9" },
-                  ],
+                  name: "STATS",
+                  icon: (
+                    <PieChartOutlineOutlinedIcon
+                      sx={{ color: "primary.main" }}
+                      style={{ fontSize: "2rem" }}
+                    />
+                  ),
                 },
               ].map((data, index) => (
                 <>
@@ -218,10 +158,10 @@ const MainSideBar = () => {
                     style={{ fontSize: "48px", padding: "1rem" }}
                     className={`${classes.listStyle} ${classes.sideBarIconSyle}`}
                   >
-                    <DashboardOutlinedIcon
-                      sx={{ color: "primary.main" }}
-                      style={{ fontSize: "2rem" }}
-                    />
+                    {/* ICONS */}
+                    {data.icon}
+                    {/* ICONS */}
+
                     <div
                       style={{
                         display: "flex",
@@ -230,7 +170,9 @@ const MainSideBar = () => {
                         padding: "0 10px",
                       }}
                     >
-                      <span style={{ fontSize: "15px" }}>{data.name}</span>
+                      <b style={{ fontSize: "12px", paddingTop: "10%" }}>
+                        {data.name}
+                      </b>
                     </div>
                   </ListItem>
                   <Divider />
@@ -240,10 +182,6 @@ const MainSideBar = () => {
           </Box>
         </Drawer>
         {/* DRAWER */}
-
-        {/*  */}
-        <SubSidebar list={listIndex} />
-        {/*  */}
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar />
