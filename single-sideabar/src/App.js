@@ -1,13 +1,13 @@
 import React from "react";
 
-import Dashboard from "./pages/Dashboard/Dashboard";
+import AdminLayout from "./layout/AdminLayout";
 
 const App = () => {
   return (
     <div>
-      <Dashboard />
+      <AdminLayout />
     </div>
   );
-};
+};  
 
 export default App;

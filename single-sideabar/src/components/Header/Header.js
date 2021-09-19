@@ -15,7 +15,6 @@ const Header = () => {
     appBar: {
       padding: "0",
       backgroundColor: "#ffffff",
-      color: "#000000",
     },
   }));
   const classes = useStyles();
@@ -25,15 +24,18 @@ const Header = () => {
       <AppBar
         className={classes.appBar}
         position="fixed"
+        style={{
+          color: "#000000",
+          backgroundColor: "#ffffff",
+        }}
         sx={{
           zIndex: (theme) => theme.zIndex.drawer + 1,
           boxShadow: 1,
-          color: "primary.main",
         }}
       >
         <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            Clipped drawer
+          <Typography sx={{ mx: 4 }} variant="h6" noWrap component="div">
+            ADMIN
           </Typography>
         </Toolbar>
       </AppBar>

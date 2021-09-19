@@ -2,7 +2,7 @@ import React from "react";
 
 import { Toolbar, Box, Grid } from "@mui/material";
 
-const Dashboard = () => {
+const Order = () => {
   return (
     <Grid container>
       <Grid item xs={1} md={1}></Grid>
@@ -13,7 +13,7 @@ const Dashboard = () => {
           component="main"
           sx={{ boxShadow: 1, px: 4, py: 1, my: 3, mx: 4 }}
         >
-          <h1>Dashboard</h1>
+          <h1>Order</h1>
         </Box>
       </Grid>
       <Grid item xs={0} md={0}></Grid>
@@ -21,4 +21,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Order;
