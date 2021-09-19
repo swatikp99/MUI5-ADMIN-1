@@ -11,7 +11,7 @@ const Settings = () => {
         <Box
           style={{ backgroundColor: "#ffffff" }}
           component="main"
-          sx={{ boxShadow: 1, px: 4, py: 1, my: 3, mx: 4 }}
+          sx={{ boxShadow: 1, px: 4, py: 1, my: 4, mx: 4 }}
         >
           <h1>Settings</h1>
         </Box>

@@ -81,7 +81,7 @@ const Category = () => {
         <Box
           style={{ backgroundColor: "#ffffff", color: "#404040" }}
           component="main"
-          sx={{ boxShadow: 1, px: 4, py: 1, my: 3, mx: 4 }}
+          sx={{ boxShadow: 1, px: 4, py: 1, my: 4, mx: 4 }}
         >
           <h1>Category</h1>
 
