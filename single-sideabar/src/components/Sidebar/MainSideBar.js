@@ -1,6 +1,6 @@
 import React from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { makeStyles } from "@mui/styles";
 
@@ -15,25 +15,22 @@ import ListItem from "@mui/material/ListItem";
 const drawerWidth = 110;
 const MainSideBar = (props) => {
   const useStyles = makeStyles((theme) => ({
-    root: {
-      display: "flex",
-      backgroundColor: "white",
-    },
-    sideBarIconSyle: {
-      fontSize: "32px",
-      padding: "2rem 0",
-      cursor: "pointer",
-    },
     listStyle: {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      padding: "2rem 0",
-      // padding: 0,
+      fontSize: "48px",
+    },
+    makeActive: {
+      color: "#11cb5f",
     },
   }));
   const classes = useStyles();
+
+  const location = useLocation();
+
+  console.log(location.pathname);
 
   return (
     <div>
@@ -62,12 +59,17 @@ const MainSideBar = (props) => {
           >
             <List>
               {props.routes.map((prop, index) => (
-                <NavLink to={prop.path} style={{ textDecoration: 'none' }}>
+                <NavLink
+                  to={prop.path}
+                  style={{ textDecoration: "none" }}
+                  key={index}
+                  activeClassName={classes.makeActive}
+                >
                   <ListItem
                     button
                     key={index}
-                    style={{ fontSize: "48px", padding: "1rem" }}
-                    className={`${classes.listStyle} ${classes.sideBarIconSyle}`}
+                    style={{ padding: "1rem" }}
+                    className={classes.listStyle}
                   >
                     {/* ICONS */}
                     {prop.icon}

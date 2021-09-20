@@ -5,6 +5,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@mui/styles";
 
+import UserAccountMenu from "./UserAccountMenu";
+
 import FontDownloadOutlinedIcon from "@mui/icons-material/FontDownloadOutlined";
 
 const Header = () => {
@@ -38,9 +40,13 @@ const Header = () => {
           <FontDownloadOutlinedIcon
             style={{ fontSize: "3rem", marginTop: "0", color: "blue" }}
           />
-          <Typography variant="h6" style={{ fontSize: "1rem", color: "#404040" }}>
+          <Typography
+            variant="h6"
+            style={{ fontSize: "1rem", color: "#404040" }}
+          >
             <strong>DMIN</strong>
           </Typography>
+          <UserAccountMenu />
         </Toolbar>
       </AppBar>
     </Box>
