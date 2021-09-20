@@ -22,8 +22,9 @@ const MainSideBar = (props) => {
       justifyContent: "center",
       fontSize: "48px",
     },
-    makeActive: {
-      color: "#11cb5f",
+    listStyleActive: {
+      display: "flex",
+      background: "#d4dbff",
     },
   }));
   const classes = useStyles();
@@ -55,7 +56,6 @@ const MainSideBar = (props) => {
               overflow: "auto",
               boxShadow: 1,
             }}
-            style={{ marginTop: "2%" }}
           >
             <List>
               {props.routes.map((prop, index) => (
@@ -63,12 +63,14 @@ const MainSideBar = (props) => {
                   to={prop.path}
                   style={{ textDecoration: "none" }}
                   key={index}
-                  activeClassName={classes.makeActive}
+                  activeClassName={classes.listStyleActive}
                 >
                   <ListItem
                     button
                     key={index}
-                    style={{ padding: "1rem" }}
+                    style={{
+                      padding: "1rem",
+                    }}
                     className={classes.listStyle}
                   >
                     {/* ICONS */}

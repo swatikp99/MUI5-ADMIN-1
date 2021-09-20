@@ -26,10 +26,10 @@ const UserAccountMenu = () => {
     <>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <Typography sx={{ minWidth: 100, mr: 110 }}></Typography>
-        <Typography sx={{ minWidth: 100 }}></Typography>
+        <Typography sx={{ minWidth: 100 }}>Hello User !</Typography>
         <Tooltip title="Account settings">
           <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}>
-            <Avatar sx={{ width: 32, height: 32 }} />
+            <Avatar sx={{}} />
           </IconButton>
         </Tooltip>
       </Box>

@@ -1,23 +1,38 @@
 import React from "react";
 
-import { Toolbar, Box, Grid } from "@mui/material";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import { CardActionArea } from "@mui/material";
+
+// * Page Wrapper
+import PageWrapper from "../../components/Wrappers/PageWrapper";
 
 const Dashboard = () => {
   return (
-    <Grid container>
-      <Grid item xs={1} md={1}></Grid>
-      <Grid item xs={8} md={11}>
-        <Toolbar />
-        <Box
-          style={{ backgroundColor: "#ffffff" }}
-          component="main"
-          sx={{ boxShadow: 1, px: 4, py: 1, my: 4, mx: 4 }}
-        >
-          <h1>Dashboard</h1>
-        </Box>
-      </Grid>
-      <Grid item xs={0} md={0}></Grid>
-    </Grid>
+    <PageWrapper pageName="Dashboard">
+      <Card
+        sx={{
+          maxWidth: 345,
+          boxShadow: 0,
+          border: 2,
+          my: 2,
+          borderColor: "blue",
+        }}
+      >
+        <CardActionArea>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Lizard
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over
+              6,000 species, ranging across all continents except Antarctica
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </PageWrapper>
   );
 };
 
