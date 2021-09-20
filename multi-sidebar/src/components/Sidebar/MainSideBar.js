@@ -44,6 +44,7 @@ const MainSideBar = () => {
   const classes = useStyles();
 
   const [listIndex, setlistIndex] = useState(0);
+  const [openSubSideBar, setOpenSubSideBar] = useState(false);
 
   useEffect(() => {}, [listIndex]);
 
@@ -214,6 +215,7 @@ const MainSideBar = () => {
                     key={index}
                     onClick={() => {
                       setlistIndex(data);
+                      setOpenSubSideBar(true);
                     }}
                     style={{ fontSize: "48px", padding: "1rem" }}
                     className={`${classes.listStyle} ${classes.sideBarIconSyle}`}
@@ -242,7 +244,14 @@ const MainSideBar = () => {
         {/* DRAWER */}
 
         {/*  */}
-        <SubSidebar list={listIndex} />
+        {openSubSideBar && (
+          <SubSidebar
+            list={listIndex}
+            openSideBar={openSubSideBar}
+            openCloseBar={() => setOpenSubSideBar(false)}
+          />
+        )}
+
         {/*  */}
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

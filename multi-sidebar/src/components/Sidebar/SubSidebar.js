@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@mui/styles";
 
 import Header from "../Header/Header";
@@ -19,16 +19,13 @@ import MailIcon from "@mui/icons-material/Mail";
 const drawerWidth = 180;
 
 const SubSidebar = (props) => {
-  const [state, setstate] = useState(true);
-
-  console.log(state)
 
   return (
     <>
       {props.list ? (
         <>
           <Drawer
-            open={state}
+            open={props.openSideBar}
             variant="persistent"
             key={props.name}
             sx={{
@@ -80,7 +77,7 @@ const SubSidebar = (props) => {
                 {/*  */}
                 <ListItem
                   onClick={() => {
-                    setstate(false);
+                    props.openCloseBar();
                   }}
                   button
                   sy={{ boxShadow: 2 }}
