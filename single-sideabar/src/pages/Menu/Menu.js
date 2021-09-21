@@ -3,60 +3,85 @@ import React from "react";
 // * Page Wrapper
 import PageWrapper from "../../components/Wrappers/PageWrapper";
 
-import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import NavigationIcon from "@mui/icons-material/Navigation";
+import Fab from "@mui/material/Fab";
+import Box from "@mui/material/Box";
+
+import { styled } from "@mui/system";
+import ButtonUnstyled, {
+  buttonUnstyledClasses,
+} from "@mui/core/ButtonUnstyled";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 
-const columns = [
-  { id: "name", label: "Name", minWidth: 170 },
-  { id: "code", label: "ISO\u00a0Code", minWidth: 100 },
-  {
-    id: "population",
-    label: "Population",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "size",
-    label: "Size\u00a0(km\u00b2)",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "density",
-    label: "Density",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toFixed(2),
-  },
-];
+function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
 
 const rows = [
-  { name: "India", code: "IN", code1: "IN", code2: "IN" },
-  { name: "China", code: "CN", code1: "IN", code2: "IN" },
-  { name: "Italy", code: "IT", code1: "IN", code2: "IN" },
-  { name: "UnitedStates", code: "US", code1: "IN", code2: "IN" },
-  { name: "Canada", code: "CA", code1: "IN", code2: "IN" },
-  { name: "Austral", code: "ia", code1: "IN", code2: "IN" },
-  { name: "Germany", code: "DE", code1: "IN", code2: "IN" },
-  { name: "Ireland", code: "IE", code1: "IN", code2: "IN" },
-  { name: "Mexico", code: "MX", code1: "IN", code2: "IN" },
-  { name: "Japan", code: "JP", code1: "IN", code2: "IN" },
-  { name: "France", code: "FR", code1: "IN", code2: "IN" },
-  { name: "United Kingdom", code: "GB", code1: "IN", code2: "IN" },
-  { name: "Russia", code: "RU", code1: "IN", code2: "IN" },
-  { name: "Nigeria", code: "NG", code1: "IN", code2: "IN" },
-  { name: "Brazil", code: "BR", code1: "IN", code2: "IN" },
+  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
+  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
+  createData("Eclair", 262, 16.0, 24, 6.0),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
+
+const CustomButtonRoot = styled("button")(`
+  background-color: #e6e6e6;
+  padding: 10px 12px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  transition: all 200ms ease;
+  cursor: pointer;
+  box-shadow:  5px 5px 29px -13px rgba(0,0,0,1);;
+  border: none;
+
+  &:hover {
+    background-color: #d9d9d9;
+    color: "#ffffff"
+  }
+
+  &.${buttonUnstyledClasses.active} {
+    background-color: #004386;
+  }
+
+  &.${buttonUnstyledClasses.focusVisible} {
+    box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1), 0 0 0 5px rgba(0, 127, 255, 0.5);
+    outline: none;
+  }
+
+  &.${buttonUnstyledClasses.disabled} {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: 0 0 0 0 rgba(0, 127, 255, 0);
+  }
+`);
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: "#393E41",
+    color: "white",
+    padding: "1.3rem 1rem",
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+function CustomButton(props) {
+  return <ButtonUnstyled {...props} component={CustomButtonRoot} />;
+}
 
 const Menu = () => {
   const [page, setPage] = React.useState(0);
@@ -73,61 +98,51 @@ const Menu = () => {
 
   return (
     <PageWrapper pageName="Menu">
+      <CustomButton variant="outlined">
+        <ChevronRightOutlinedIcon style={{ color: "#404040" }} />
+      </CustomButton>
+
       {/*  */}
 
-      <Paper sx={{ width: "100%", overflow: "hidden" }}>
-        <TableContainer sx={{ maxHeight: 440 }}>
-          <Table stickyHeader aria-label="sticky table">
-            <TableHead>
-              <TableRow>
-                {columns.map((column) => (
-                  <TableCell
-                    key={column.id}
-                    align={column.align}
-                    style={{ minWidth: column.minWidth }}
-                  >
-                    {column.label}
-                  </TableCell>
-                ))}
+      <TableContainer component={Paper}>
+        <Table stickyHeader sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell>Dessert (100g serving)</StyledTableCell>
+              <StyledTableCell align="center">Calories</StyledTableCell>
+              <StyledTableCell align="center">Fat&nbsp;(g)</StyledTableCell>
+              <StyledTableCell align="center">Carbs&nbsp;(g)</StyledTableCell>
+              <StyledTableCell align="center">VIEW</StyledTableCell>
+              <StyledTableCell align="center">DELETE</StyledTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.name}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.name}
+                </TableCell>
+                <TableCell align="center">{row.calories}</TableCell>
+                <TableCell align="center">{row.fat}</TableCell>
+                <TableCell align="center">{row.carbs}</TableCell>
+                <TableCell align="center">
+                  <CustomButton variant="outlined">
+                    <ChevronRightOutlinedIcon style={{ color: "#404040" }} />
+                  </CustomButton>
+                </TableCell>
+                <TableCell align="center">
+                  <CustomButton variant="outlined">
+                    <DeleteOutlineOutlinedIcon style={{ color: "#404040" }} />
+                  </CustomButton>
+                </TableCell>
               </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row) => {
-                  return (
-                    <TableRow
-                      hover
-                      role="checkbox"
-                      tabIndex={-1}
-                      key={row.code}
-                    >
-                      {columns.map((column) => {
-                        const value = row[column.id];
-                        return (
-                          <TableCell key={column.id} align={column.align}>
-                            {column.format && typeof value === "number"
-                              ? column.format(value)
-                              : value}
-                          </TableCell>
-                        );
-                      })}
-                    </TableRow>
-                  );
-                })}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[10, 25, 100]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
-      </Paper>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
 
       {/*  */}
     </PageWrapper>
