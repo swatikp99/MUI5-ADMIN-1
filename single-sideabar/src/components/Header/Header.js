@@ -16,7 +16,7 @@ const Header = () => {
         position="fixed"
         style={{
           color: "yellow",
-          backgroundColor: "#7C83FD",
+          backgroundColor: "#162B32",
           padding: "0.2rem",
         }}
         sx={{

@@ -89,7 +89,7 @@ const MainSideBar = (props) => {
                         style={{
                           fontSize: "12px",
                           paddingTop: "10%",
-                          color: "#5c65ff",
+                          color: "#162B32",
                         }}
                       >
                         {prop.name}

@@ -20,7 +20,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 // * icon Color
 
 // const iconColor = "primary.main";
-const iconColor = "#7C83FD";
+const iconColor = "#162B32";
 const iconSize = "2rem";
 
 var IndexRoutes = [

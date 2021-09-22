@@ -8,6 +8,6 @@ const App = () => {
       <AdminLayout />
     </div>
   );
-};  
+};
 
 export default App;
