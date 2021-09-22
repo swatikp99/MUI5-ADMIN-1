@@ -35,8 +35,8 @@ const rows = [
 ];
 
 const CustomButtonRoot = styled("button")(`
-  background-color: #e6e6e6;
-  padding: 10px 12px;
+  background-color: #7C83FD;
+  padding: 8px 10px;
   border-radius: 50px;
   color: #fff;
   font-weight: 600;
@@ -48,7 +48,7 @@ const CustomButtonRoot = styled("button")(`
   border: none;
 
   &:hover {
-    background-color: #d9d9d9;
+    background-color: #4e58fc;
     color: "#ffffff"
   }
 
@@ -70,9 +70,9 @@ const CustomButtonRoot = styled("button")(`
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#393E41",
+    backgroundColor: "#7C83FD",
     color: "white",
-    padding: "1.3rem 1rem",
+    padding: "0.8rem 1rem",
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -97,11 +97,7 @@ const Menu = () => {
   };
 
   return (
-    <PageWrapper pageName="Menu">
-      <CustomButton variant="outlined">
-        <ChevronRightOutlinedIcon style={{ color: "#404040" }} />
-      </CustomButton>
-
+    <PageWrapper pageName="MY MENU">
       {/*  */}
 
       <TableContainer component={Paper}>
@@ -130,12 +126,12 @@ const Menu = () => {
                 <TableCell align="center">{row.carbs}</TableCell>
                 <TableCell align="center">
                   <CustomButton variant="outlined">
-                    <ChevronRightOutlinedIcon style={{ color: "#404040" }} />
+                    <ChevronRightOutlinedIcon sx={{ color: "#ffffff" }} />
                   </CustomButton>
                 </TableCell>
                 <TableCell align="center">
                   <CustomButton variant="outlined">
-                    <DeleteOutlineOutlinedIcon style={{ color: "#404040" }} />
+                    <DeleteOutlineOutlinedIcon sx={{ color: "#ffffff" }} />
                   </CustomButton>
                 </TableCell>
               </TableRow>

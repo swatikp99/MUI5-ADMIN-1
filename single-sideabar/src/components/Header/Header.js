@@ -10,26 +10,14 @@ import UserAccountMenu from "./UserAccountMenu";
 import FontDownloadOutlinedIcon from "@mui/icons-material/FontDownloadOutlined";
 
 const Header = () => {
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      display: "flex",
-      backgroundColor: "white",
-    },
-    appBar: {
-      padding: "0",
-      backgroundColor: "#ffffff",
-    },
-  }));
-  const classes = useStyles();
-
   return (
     <Box sx={{ flexGrow: 1, boxShadow: 0 }}>
       <AppBar
-        className={classes.appBar}
         position="fixed"
         style={{
-          color: "#000000",
-          backgroundColor: "#ffffff",
+          color: "yellow",
+          backgroundColor: "#7C83FD",
+          padding: "0.2rem",
         }}
         sx={{
           zIndex: (theme) => theme.zIndex.drawer + 1,
@@ -38,13 +26,19 @@ const Header = () => {
       >
         <Toolbar sx={{ mx: 4 }}>
           <FontDownloadOutlinedIcon
-            style={{ fontSize: "3rem", marginTop: "0", color: "blue" }}
+            style={{ fontSize: "3rem", marginTop: "0", color: "yellow" }}
           />
           <Typography
             variant="h6"
-            style={{ fontSize: "1rem", color: "#404040" }}
+            style={{ fontSize: "1rem", color: "yellow" }}
           >
-            <strong>DMIN</strong>
+            <strong
+              style={{
+                color: "#FFF5AB",
+              }}
+            >
+              DMIN
+            </strong>
           </Typography>
           <UserAccountMenu />
         </Toolbar>

@@ -24,7 +24,7 @@ const MainSideBar = (props) => {
     },
     listStyleActive: {
       display: "flex",
-      background: "#d4dbff",
+      background: "#ffffa6",
     },
   }));
   const classes = useStyles();
@@ -89,7 +89,7 @@ const MainSideBar = (props) => {
                         style={{
                           fontSize: "12px",
                           paddingTop: "10%",
-                          color: "#404040",
+                          color: "#5c65ff",
                         }}
                       >
                         {prop.name}

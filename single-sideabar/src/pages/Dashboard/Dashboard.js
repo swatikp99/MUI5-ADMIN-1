@@ -17,7 +17,7 @@ const Dashboard = () => {
           boxShadow: 0,
           border: 2,
           my: 2,
-          borderColor: "blue",
+          borderColor: "#393E41",
         }}
       >
         <CardActionArea>

@@ -13,7 +13,9 @@ const PageWrapper = (props) => {
           component="main"
           sx={{ boxShadow: 1, p: 4, m: 4 }}
         >
-          <span style={{ color: "#404040", fontSize: "2rem" }}>
+          <span
+            style={{ color: "#7C83FD", fontSize: "2.5rem" }}
+          >
             <b>{props.pageName}</b>
             {props.children}
           </span>
