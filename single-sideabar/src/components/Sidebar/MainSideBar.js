@@ -24,7 +24,7 @@ const MainSideBar = (props) => {
     },
     listStyleActive: {
       display: "flex",
-      background: "#ffffa6",
+      background: "#e6e6e6",
     },
   }));
   const classes = useStyles();

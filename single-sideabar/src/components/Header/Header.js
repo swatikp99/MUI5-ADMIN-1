@@ -15,7 +15,7 @@ const Header = () => {
       <AppBar
         position="fixed"
         style={{
-          color: "yellow",
+          color: "#F7F7F7",
           backgroundColor: "#162B32",
           padding: "0.2rem",
         }}
@@ -26,7 +26,7 @@ const Header = () => {
       >
         <Toolbar sx={{ mx: 4 }}>
           <FontDownloadOutlinedIcon
-            style={{ fontSize: "3rem", marginTop: "0", color: "yellow" }}
+            style={{ fontSize: "3rem", marginTop: "0", color: "#F7F7F7" }}
           />
           <Typography
             variant="h6"
@@ -34,7 +34,7 @@ const Header = () => {
           >
             <strong
               style={{
-                color: "#FFF5AB",
+                color: "#F7F7F7",
               }}
             >
               DMIN

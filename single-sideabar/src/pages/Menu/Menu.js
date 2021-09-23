@@ -3,17 +3,19 @@ import React from "react";
 // * Page Wrapper
 import PageWrapper from "../../components/Wrappers/PageWrapper";
 
+import { styled } from '@mui/material/styles';
+
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import NavigationIcon from "@mui/icons-material/Navigation";
-import Fab from "@mui/material/Fab";
-import Box from "@mui/material/Box";
+import Switch from "@mui/material/Switch";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
+import CardMedia from "@mui/material/CardMedia";
 
-import { styled } from "@mui/system";
 import ButtonUnstyled, {
   buttonUnstyledClasses,
 } from "@mui/core/ButtonUnstyled";
@@ -35,7 +37,7 @@ const rows = [
 ];
 
 const CustomButtonRoot = styled("button")(`
-  background-color: #7C83FD;
+  background-color: #162B32;
   padding: 8px 10px;
   border-radius: 50px;
   color: #fff;
@@ -70,12 +72,63 @@ const CustomButtonRoot = styled("button")(`
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#7C83FD",
-    color: "white",
+    backgroundColor: "#162B32",
+    color: "#F7F7F7",
     padding: "0.8rem 1rem",
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
+    fontSize: 24,
+  },
+}));
+
+const IOSSwitch = styled((props) => (
+  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+))(({ theme }) => ({
+  width: 42,
+  height: 26,
+  padding: 0,
+  "& .MuiSwitch-switchBase": {
+    padding: 0,
+    margin: 2,
+    transitionDuration: "200ms",
+    "&.Mui-checked": {
+      transform: "translateX(16px)",
+      color: "#fff",
+      "& + .MuiSwitch-track": {
+        backgroundColor: theme.palette.mode === "dark" ? "#2ECA45" : "#162B32",
+        opacity: 1,
+        border: 0,
+      },
+      "&.Mui-disabled + .MuiSwitch-track": {
+        opacity: 0.5,
+      },
+    },
+    "&.Mui-focusVisible .MuiSwitch-thumb": {
+      color: "#33cf4d",
+      border: "6px solid #fff",
+    },
+    "&.Mui-disabled .MuiSwitch-thumb": {
+      color:
+        theme.palette.mode === "light"
+          ? theme.palette.grey[100]
+          : theme.palette.grey[600],
+    },
+    "&.Mui-disabled + .MuiSwitch-track": {
+      opacity: theme.palette.mode === "light" ? 0.7 : 0.3,
+    },
+  },
+  "& .MuiSwitch-thumb": {
+    boxSizing: "border-box",
+    width: 22,
+    height: 22,
+  },
+  "& .MuiSwitch-track": {
+    borderRadius: 26 / 2,
+    backgroundColor: theme.palette.mode === "light" ? "#E9E9EA" : "#39393D",
+    opacity: 1,
+    transition: theme.transitions.create(["background-color"], {
+      duration: 500,
+    }),
   },
 }));
 
@@ -84,32 +137,36 @@ function CustomButton(props) {
 }
 
 const Menu = () => {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
-
   return (
     <PageWrapper pageName="MY MENU">
+      <RestaurantIcon />
       {/*  */}
 
       <TableContainer component={Paper}>
         <Table stickyHeader sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-              <StyledTableCell align="center">Calories</StyledTableCell>
-              <StyledTableCell align="center">Fat&nbsp;(g)</StyledTableCell>
-              <StyledTableCell align="center">Carbs&nbsp;(g)</StyledTableCell>
-              <StyledTableCell align="center">VIEW</StyledTableCell>
-              <StyledTableCell align="center">DELETE</StyledTableCell>
+              <StyledTableCell align="center">
+                <b>ITEM</b>
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                <b>NAME</b>
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                <b>CATEGORY</b>
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                <b>PRICE</b>
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                <b>STATUS</b>
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                <b>VIEW</b>
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                <b>DELETE</b>
+              </StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -118,20 +175,31 @@ const Menu = () => {
                 key={row.name}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
-                  {row.name}
+                <TableCell align="center">
+                  <CardMedia
+                    component="img"
+                    height="100"
+                    image="https://dummyimage.com/400x400/000/fff"
+                    alt="Paella dish"
+                  />
                 </TableCell>
+                <TableCell align="center">{row.name}</TableCell>
                 <TableCell align="center">{row.calories}</TableCell>
                 <TableCell align="center">{row.fat}</TableCell>
-                <TableCell align="center">{row.carbs}</TableCell>
+                <TableCell align="center">
+                    <FormControlLabel
+                      control={<IOSSwitch sx={{ ml: 4 }} defaultChecked />}
+                      label=""
+                    />
+                </TableCell>
                 <TableCell align="center">
                   <CustomButton variant="outlined">
-                    <ChevronRightOutlinedIcon sx={{ color: "#ffffff" }} />
+                    <ChevronRightOutlinedIcon sx={{}} />
                   </CustomButton>
                 </TableCell>
                 <TableCell align="center">
                   <CustomButton variant="outlined">
-                    <DeleteOutlineOutlinedIcon sx={{ color: "#ffffff" }} />
+                    <DeleteOutlineOutlinedIcon sx={{}} />
                   </CustomButton>
                 </TableCell>
               </TableRow>

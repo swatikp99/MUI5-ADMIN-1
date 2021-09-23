@@ -10,14 +10,14 @@ import PageWrapper from "../../components/Wrappers/PageWrapper";
 
 const Dashboard = () => {
   return (
-    <PageWrapper pageName="Dashboard">
+    <PageWrapper pageName="DASHBOARD">
       <Card
         sx={{
           maxWidth: 345,
-          boxShadow: 0,
+          boxShadow: 1,
           border: 2,
           my: 2,
-          borderColor: "#393E41",
+          borderColor: "#7DA2A9",
         }}
       >
         <CardActionArea>
