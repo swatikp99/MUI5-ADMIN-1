@@ -3,7 +3,7 @@ import React from "react";
 // * Page Wrapper
 import PageWrapper from "../../components/Wrappers/PageWrapper";
 
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -13,16 +13,18 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import RestaurantIcon from "@mui/icons-material/Restaurant";
 import CardMedia from "@mui/material/CardMedia";
+import IconButton from "@mui/material/IconButton";
+
+// * SVG ICONS
+import CrossSvg from "../../routes/icons/cross.svg";
+import RightArrowSvg from "../../routes/icons/rightArrow.svg";
+import MenuSvg from "../../routes/icons/menu.svg";
 
 import ButtonUnstyled, {
   buttonUnstyledClasses,
 } from "@mui/core/ButtonUnstyled";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -46,7 +48,7 @@ const CustomButtonRoot = styled("button")(`
   font-size: 14px;
   transition: all 200ms ease;
   cursor: pointer;
-  box-shadow:  5px 5px 29px -13px rgba(0,0,0,1);;
+  box-shadow:  5px 5px 29px -13px rgba(0,0,0,1);
   border: none;
 
   &:hover {
@@ -72,7 +74,7 @@ const CustomButtonRoot = styled("button")(`
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#162B32",
+    backgroundColor: "#de6262",
     color: "#F7F7F7",
     padding: "0.8rem 1rem",
   },
@@ -95,7 +97,7 @@ const IOSSwitch = styled((props) => (
       transform: "translateX(16px)",
       color: "#fff",
       "& + .MuiSwitch-track": {
-        backgroundColor: theme.palette.mode === "dark" ? "#2ECA45" : "#162B32",
+        backgroundColor: theme.palette.mode === "dark" ? "#2ECA45" : "#34ED11",
         opacity: 1,
         border: 0,
       },
@@ -139,7 +141,7 @@ function CustomButton(props) {
 const Menu = () => {
   return (
     <PageWrapper pageName="MY MENU">
-      <RestaurantIcon />
+      <img src={MenuSvg} loading="lazy" width="40" />
       {/*  */}
 
       <TableContainer component={Paper}>
@@ -183,24 +185,53 @@ const Menu = () => {
                     alt="Paella dish"
                   />
                 </TableCell>
-                <TableCell align="center">{row.name}</TableCell>
-                <TableCell align="center">{row.calories}</TableCell>
-                <TableCell align="center">{row.fat}</TableCell>
                 <TableCell align="center">
-                    <FormControlLabel
-                      control={<IOSSwitch sx={{ ml: 4 }} defaultChecked />}
-                      label=""
-                    />
+                  <b>{row.name}</b>
                 </TableCell>
                 <TableCell align="center">
-                  <CustomButton variant="outlined">
+                  <b>{row.calories}</b>
+                </TableCell>
+                <TableCell align="center">
+                  <b>{row.fat}</b>
+                </TableCell>
+                <TableCell align="center">
+                  <FormControlLabel
+                    control={<IOSSwitch sx={{ ml: 4 }} defaultChecked />}
+                    label=""
+                  />
+                </TableCell>
+                <TableCell align="center">
+                  {/* <CustomButton variant="outlined">
                     <ChevronRightOutlinedIcon sx={{}} />
-                  </CustomButton>
+                  </CustomButton> */}
+                  <IconButton variant="text">
+                    {/* <DeleteOutlineOutlinedIcon sx={{}} /> */}
+                    <img
+                      style={{
+                        // boxShadow: "5px 5px 29px -13px rgba(0,0,0,1)",
+                        filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2))",
+                      }}
+                      src={RightArrowSvg}
+                      loading="lazy"
+                      width="40"
+                    />
+                    {/* </CustomButton> */}
+                  </IconButton>
                 </TableCell>
                 <TableCell align="center">
-                  <CustomButton variant="outlined">
-                    <DeleteOutlineOutlinedIcon sx={{}} />
-                  </CustomButton>
+                  <IconButton variant="text">
+                    {/* <DeleteOutlineOutlinedIcon sx={{}} /> */}
+                    <img
+                      style={{
+                        // boxShadow: "5px 5px 29px -13px rgba(0,0,0,1)",
+                        filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2))",
+                      }}
+                      src={CrossSvg}
+                      loading="lazy"
+                      width="40"
+                    />
+                    {/* </CustomButton> */}
+                  </IconButton>
                 </TableCell>
               </TableRow>
             ))}

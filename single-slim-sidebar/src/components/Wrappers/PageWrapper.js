@@ -9,11 +9,20 @@ const PageWrapper = (props) => {
       <Grid item xs={8} md={11}>
         <Toolbar />
         <Box
-          style={{ backgroundColor: "#ffffff" , boxShadow: "17px 17px 40px -37px rgba(0,0,0,0.75)"}}
+          style={{
+            backgroundColor: "#ffffff",
+            boxShadow: "17px 17px 40px -37px rgba(0,0,0,0.75)",
+          }}
           component="main"
           sx={{ p: 4, m: 4 }}
         >
-          <span style={{ color: "#162B32", fontSize: "2.5rem" }}>
+          <span
+            style={{
+              color: "#de6262",
+              fontSize: "2.5rem",
+              textShadow: "4px 4px 6px rgba(0,0,0,0.15)",
+            }}
+          >
             <b>{props.pageName}</b>
             {props.children}
           </span>
