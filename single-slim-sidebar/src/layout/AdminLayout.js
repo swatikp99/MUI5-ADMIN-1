@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
 
-import IndexRoutes from "../routes/index";
+import SidebarRoutes from "../routes/sidebarRoutes";
 
 import Header from "../components/Header/Header";
 import MainSideBar from "../components/Sidebar/MainSideBar";
@@ -10,10 +10,10 @@ const AdminLayout = (props) => {
   return (
     <BrowserRouter>
       <Header />
-      <MainSideBar {...props} routes={IndexRoutes} />
+      <MainSideBar {...props} routes={SidebarRoutes} />
 
       <Switch>
-        {IndexRoutes.map((prop, key) => {
+        {SidebarRoutes.map((prop, key) => {
           if (prop.redirect) {
             return <Redirect from={prop.path} to={prop.pathTo} key={key} />;
           } else {

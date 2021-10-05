@@ -38,40 +38,6 @@ const rows = [
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-const CustomButtonRoot = styled("button")(`
-  background-color: #162B32;
-  padding: 8px 10px;
-  border-radius: 50px;
-  color: #fff;
-  font-weight: 600;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  transition: all 200ms ease;
-  cursor: pointer;
-  box-shadow:  5px 5px 29px -13px rgba(0,0,0,1);
-  border: none;
-
-  &:hover {
-    background-color: #4e58fc;
-    color: "#ffffff"
-  }
-
-  &.${buttonUnstyledClasses.active} {
-    background-color: #004386;
-  }
-
-  &.${buttonUnstyledClasses.focusVisible} {
-    box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1), 0 0 0 5px rgba(0, 127, 255, 0.5);
-    outline: none;
-  }
-
-  &.${buttonUnstyledClasses.disabled} {
-    opacity: 0.5;
-    cursor: not-allowed;
-    box-shadow: 0 0 0 0 rgba(0, 127, 255, 0);
-  }
-`);
-
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: "#de6262",
@@ -134,6 +100,41 @@ const IOSSwitch = styled((props) => (
   },
 }));
 
+const CustomButtonRoot = styled("span")(`
+  background-color: #de6262;
+  padding: 10px 40px;
+  margin-bottom: 0px ;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  transition: all 200ms ease;
+  cursor: pointer;
+  box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1), 0 0 0 0 rgba(0, 127, 255, 0);
+  border: none;
+  float: right;
+
+  &:hover {
+    background-color: #de6262;
+  }
+
+  &.${buttonUnstyledClasses.active} {
+    background-color: #004386;
+  }
+
+  &.${buttonUnstyledClasses.focusVisible} {
+    box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1), 0 0 0 5px rgba(0, 127, 255, 0.5);
+    outline: none;
+  }
+
+  &.${buttonUnstyledClasses.disabled} {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: 0 0 0 0 rgba(0, 127, 255, 0);
+  }
+`);
+
 function CustomButton(props) {
   return <ButtonUnstyled {...props} component={CustomButtonRoot} />;
 }
@@ -143,6 +144,8 @@ const Menu = () => {
     <PageWrapper pageName="MY MENU">
       <img src={MenuSvg} loading="lazy" width="40" />
       {/*  */}
+
+      <CustomButton>ADD</CustomButton>
 
       <TableContainer component={Paper}>
         <Table stickyHeader sx={{ minWidth: 650 }} aria-label="simple table">
