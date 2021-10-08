@@ -6,6 +6,9 @@ import SidebarRoutes from "../routes/sidebarRoutes";
 import Header from "../components/Header/Header";
 import MainSideBar from "../components/Sidebar/MainSideBar";
 
+// * Pages Routes
+import AddMenu from "../pages/Menu/AddMenu";
+
 const AdminLayout = (props) => {
   return (
     <BrowserRouter>
@@ -13,6 +16,8 @@ const AdminLayout = (props) => {
       <MainSideBar {...props} routes={SidebarRoutes} />
 
       <Switch>
+        <Route path="/menu/add" component={AddMenu} />
+
         {SidebarRoutes.map((prop, key) => {
           if (prop.redirect) {
             return <Redirect from={prop.path} to={prop.pathTo} key={key} />;

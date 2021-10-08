@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 // * Page Wrapper
 import PageWrapper from "../../components/Wrappers/PageWrapper";
 
@@ -145,7 +147,7 @@ const Menu = () => {
       <img src={MenuSvg} loading="lazy" width="40" />
       {/*  */}
 
-      <CustomButton>ADD</CustomButton>
+      <Link to="/menu/add"><CustomButton>ADD</CustomButton></Link>
 
       <TableContainer component={Paper}>
         <Table stickyHeader sx={{ minWidth: 650 }} aria-label="simple table">
