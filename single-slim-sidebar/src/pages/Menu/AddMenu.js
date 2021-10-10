@@ -4,7 +4,7 @@ import React from "react";
 import PageWrapper from "../../components/Wrappers/PageWrapper";
 
 // * MUI
-import { Card, Box, TextField } from "@mui/material";
+import { Grid, Box, TextField, InputAdornment, Card } from "@mui/material";
 
 import { styled } from "@mui/material/styles";
 
@@ -37,20 +37,79 @@ const CssTextField = styled(TextField)({
 const AddMenu = () => {
   return (
     <PageWrapper pageName="ADD MENU">
-      <Box
-        component="form"
-        sx={{
-          py: 2,
-          "& .MuiTextField-root": { m: 1, width: "25ch" },
-        }}
-        noValidate
-        autoComplete="off"
-      >
+      <Box sx={{ flexGrow: 1, py: 4 }}>
         {/* FORM */}
-        <div>
-          <CssTextField required id="outlined-required" label="Item Name" />
-          <CssTextField required id="outlined-required" label="Item Name" />
-        </div>
+        <Grid container spacing={2}>
+          <Grid item xs={8} md={4}>
+            <CssTextField
+              fullWidth
+              required
+              id="outlined-required"
+              label="Item Name"
+            />
+          </Grid>
+          <Grid item xs={8} md={4}>
+            <CssTextField
+              fullWidth
+              required
+              id="outlined-required"
+              label="Item Name"
+            />
+          </Grid>
+          <Grid item xs={8} md={4}>
+            <CssTextField
+              fullWidth
+              required
+              id="outlined-required"
+              label="Item Name"
+            />
+          </Grid>
+          <Grid item xs={8} md={4}>
+            <CssTextField
+              fullWidth
+              required
+              id="outlined-required"
+              label="Price"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <span style={{ color: "#de6262" }}>₹</span>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+          <Grid item xs={8} md={4}>
+            <CssTextField
+              fullWidth
+              required
+              id="outlined-required"
+              label="MRP"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <span style={{ color: "#de6262" }}>₹</span>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+          <Grid item xs={8} md={4}>
+            <CssTextField
+              fullWidth
+              required
+              id="outlined-required"
+              label="Price"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <span style={{ color: "#de6262" }}>₹</span>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+        </Grid>
       </Box>
     </PageWrapper>
   );
