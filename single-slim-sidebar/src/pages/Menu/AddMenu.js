@@ -4,7 +4,7 @@ import React from "react";
 import PageWrapper from "../../components/Wrappers/PageWrapper";
 
 // * MUI
-import { Grid, Box, TextField, InputAdornment, Card } from "@mui/material";
+import { Grid, Box, TextField, InputAdornment } from "@mui/material";
 
 import { styled } from "@mui/material/styles";
 

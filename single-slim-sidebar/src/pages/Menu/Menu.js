@@ -147,7 +147,9 @@ const Menu = () => {
       <img src={MenuSvg} loading="lazy" width="40" />
       {/*  */}
 
-      <Link to="/menu/add"><CustomButton>ADD</CustomButton></Link>
+      <Link to="/menu/add">
+        <CustomButton>ADD</CustomButton>
+      </Link>
 
       <TableContainer component={Paper}>
         <Table stickyHeader sx={{ minWidth: 650 }} aria-label="simple table">
@@ -209,34 +211,42 @@ const Menu = () => {
                   {/* <CustomButton variant="outlined">
                     <ChevronRightOutlinedIcon sx={{}} />
                   </CustomButton> */}
-                  <IconButton variant="text">
-                    {/* <DeleteOutlineOutlinedIcon sx={{}} /> */}
-                    <img
-                      style={{
-                        // boxShadow: "5px 5px 29px -13px rgba(0,0,0,1)",
-                        filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2))",
-                      }}
-                      src={RightArrowSvg}
-                      loading="lazy"
-                      width="40"
-                    />
-                    {/* </CustomButton> */}
-                  </IconButton>
+                  {/* LINK TO SINGLE MENU */}
+                  <Link to="/menu/single">
+                    <IconButton variant="text">
+                      {/* <DeleteOutlineOutlinedIcon sx={{}} /> */}
+                      <img
+                        style={{
+                          // boxShadow: "5px 5px 29px -13px rgba(0,0,0,1)",
+                          filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2))",
+                        }}
+                        src={RightArrowSvg}
+                        loading="lazy"
+                        width="40"
+                      />
+                      {/* </CustomButton> */}
+                    </IconButton>
+                  </Link>
+                  {/* LINK TO SINGLE MENU */}
                 </TableCell>
                 <TableCell align="center">
-                  <IconButton variant="text">
-                    {/* <DeleteOutlineOutlinedIcon sx={{}} /> */}
-                    <img
-                      style={{
-                        // boxShadow: "5px 5px 29px -13px rgba(0,0,0,1)",
-                        filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2))",
-                      }}
-                      src={CrossSvg}
-                      loading="lazy"
-                      width="40"
-                    />
-                    {/* </CustomButton> */}
-                  </IconButton>
+                  {/* LINK TO SINGLE MENU */}
+                  <Link to="/menu/delete">
+                    <IconButton variant="text">
+                      {/* <DeleteOutlineOutlinedIcon sx={{}} /> */}
+                      <img
+                        style={{
+                          // boxShadow: "5px 5px 29px -13px rgba(0,0,0,1)",
+                          filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2))",
+                        }}
+                        src={CrossSvg}
+                        loading="lazy"
+                        width="40"
+                      />
+                      {/* </CustomButton> */}
+                    </IconButton>
+                  </Link>
+                  {/* LINK TO SINGLE MENU */}
                 </TableCell>
               </TableRow>
             ))}

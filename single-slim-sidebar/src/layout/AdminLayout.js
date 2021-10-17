@@ -8,6 +8,7 @@ import MainSideBar from "../components/Sidebar/MainSideBar";
 
 // * Pages Routes
 import AddMenu from "../pages/Menu/AddMenu";
+import SingleMenu from "../pages/Menu/SingleMenu";
 
 const AdminLayout = (props) => {
   return (
@@ -17,6 +18,7 @@ const AdminLayout = (props) => {
 
       <Switch>
         <Route path="/menu/add" component={AddMenu} />
+        <Route path="/menu/single" component={SingleMenu} />
 
         {SidebarRoutes.map((prop, key) => {
           if (prop.redirect) {
