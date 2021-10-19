@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -17,6 +17,10 @@ import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import CardMedia from "@mui/material/CardMedia";
 import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+
+// * Import Modal Component
+import ModalSm from "../../components/Misc/Modal/ModalSm";
 
 // * SVG ICONS
 import CrossSvg from "../../routes/icons/cross.svg";
@@ -142,6 +146,17 @@ function CustomButton(props) {
 }
 
 const Menu = () => {
+  // * Modal States
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <PageWrapper pageName="MY MENU">
       <img src={MenuSvg} loading="lazy" width="40" />
@@ -231,7 +246,7 @@ const Menu = () => {
                 </TableCell>
                 <TableCell align="center">
                   {/* LINK TO SINGLE MENU */}
-                  <Link to="/menu/delete">
+                  <Button onClick={handleOpen}>
                     <IconButton variant="text">
                       {/* <DeleteOutlineOutlinedIcon sx={{}} /> */}
                       <img
@@ -245,7 +260,12 @@ const Menu = () => {
                       />
                       {/* </CustomButton> */}
                     </IconButton>
-                  </Link>
+                  </Button>
+                  {/* MODAL POPUP */}
+
+                  <ModalSm open={open} onClose={handleClose} value={"Item"} />
+
+                  {/* /////////// */}
                   {/* LINK TO SINGLE MENU */}
                 </TableCell>
               </TableRow>
