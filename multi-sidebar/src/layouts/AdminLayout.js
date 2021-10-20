@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 // * React Router Dom
-import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 
 // * Sidebar Routes
 import SidebarRoutes from "../routes/sideBarRoutes";
