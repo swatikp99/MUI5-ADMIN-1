@@ -16,10 +16,12 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 
+// * React router dom
+import { Link } from "react-router-dom";
+
 const drawerWidth = 180;
 
 const SubSidebar = (props) => {
-
   return (
     <>
       {props.list ? (
@@ -46,27 +48,29 @@ const SubSidebar = (props) => {
                   <>
                     {props.list.sub_list ? (
                       <>
-                        <ListItem
-                          button
-                          key={index}
-                          sy={{ boxShadow: 2 }}
-                          style={{ fontSize: "48px" }}
-                        >
-                          <div
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              padding: "0 0.3rem",
-                            }}
+                        <Link to={text.path}>
+                          <ListItem
+                            button
+                            key={index}
+                            sy={{ boxShadow: 2 }}
+                            style={{ fontSize: "48px" }}
                           >
-                            <ListItemIcon>
-                              <MailIcon />
-                            </ListItemIcon>
-                            <ListItemText style={{ fontSize: "10px" }}>
-                              {text.name}
-                            </ListItemText>
-                          </div>
-                        </ListItem>
+                            <div
+                              style={{
+                                display: "flex",
+                                alignItems: "center",
+                                padding: "0 0.3rem",
+                              }}
+                            >
+                              <ListItemIcon>
+                                <MailIcon />
+                              </ListItemIcon>
+                              <ListItemText style={{ fontSize: "10px" }}>
+                                {text.name}
+                              </ListItemText>
+                            </div>
+                          </ListItem>
+                        </Link>
                       </>
                     ) : (
                       <></>
