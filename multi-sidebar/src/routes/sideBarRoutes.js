@@ -14,8 +14,6 @@ import C2 from "../pages/C/C2";
 import C3 from "../pages/C/C3";
 import C4 from "../pages/C/C4";
 
-import Test from '../pages/Test'
-
 var SidebarRoutes = [
   {
     path: "/a/a1",
@@ -48,14 +46,6 @@ var SidebarRoutes = [
       { path: "/c/c2", name: "C 2", component: C2 },
       { path: "/c/c3", name: "C 3", component: C3 },
       { path: "/c/c4", name: "C 4", component: C4 },
-    ],
-  },
-  {
-    path: "/d/test",
-    name: "D",
-    component: Test,
-    sub_list: [
-      { path: "/d/test", name: "Test", component: Test }
     ],
   },
   // { path: "/", pathTo: "/", name: "", redirect: true },
