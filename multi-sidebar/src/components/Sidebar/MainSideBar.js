@@ -19,7 +19,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 
 // * React router dom
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 // * Components
 import SubSidebar from "./SubSidebar";
@@ -42,16 +42,25 @@ const MainSideBar = (props) => {
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      padding: "2rem 0",
-      // padding: 0,
+      fontSize: "48px",
+    },
+    listStyleActive: {
+      display: "flex",
+      background: "#e6e6e6",
     },
   }));
+
   const classes = useStyles();
 
   const [listIndex, setlistIndex] = useState(0);
   const [openSubSideBar, setOpenSubSideBar] = useState(false);
+  const [openOrCLoseDrawer, setOpenOrCLoseDrawer] = useState("permanent");
 
   useEffect(() => {}, [listIndex, openSubSideBar]);
+
+  const location = useLocation();
+
+  console.log(location.pathname);
 
   return (
     <div>
@@ -63,7 +72,7 @@ const MainSideBar = (props) => {
 
         {/* DRAWER */}
         <Drawer
-          variant="permanent"
+          variant={openOrCLoseDrawer}
           sx={{
             width: drawerWidth,
             flexShrink: 0,
@@ -83,11 +92,14 @@ const MainSideBar = (props) => {
           >
             <List>
               {props.routes.map((data, index) => (
-                <>
-                  <Link to={data.path}>
+                <div key={data.name}>
+                  <NavLink
+                    to={data.path}
+                    style={{ textDecoration: "none" }}
+                    activeClassName={classes.listStyleActive}
+                  >
                     <ListItem
                       button
-                      key={index}
                       onClick={() => {
                         setlistIndex(data);
                         if (openSubSideBar === false) {
@@ -116,11 +128,22 @@ const MainSideBar = (props) => {
                         <span style={{ fontSize: "15px" }}>{data.name}</span>
                       </div>
                     </ListItem>
-                  </Link>
+                  </NavLink>
 
                   <Divider />
-                </>
+                </div>
               ))}
+              <Button
+                onClick={() => {
+                  if (openOrCLoseDrawer === "permanent") {
+                    setOpenOrCLoseDrawer("permanent");
+                  } else {
+                    setOpenOrCLoseDrawer("permanent");
+                  }
+                }}
+              >
+                <ListItem>CLOSE</ListItem>
+              </Button>
             </List>
           </Box>
         </Drawer>
@@ -134,8 +157,6 @@ const MainSideBar = (props) => {
             openCloseBar={() => setOpenSubSideBar(false)}
           />
         )}
-
-        
       </Box>
     </div>
   );

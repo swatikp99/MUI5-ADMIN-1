@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@mui/styles";
-
 import Header from "../Header/Header";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -17,18 +16,43 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 
 // * React router dom
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const drawerWidth = 180;
 
 const SubSidebar = (props) => {
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      display: "flex",
+      backgroundColor: "white",
+    },
+    sideBarIconSyle: {
+      fontSize: "32px",
+      padding: "2rem 0",
+      cursor: "pointer",
+    },
+
+    listStyle: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: "48px",
+    },
+    listStyleActive: {
+      display: "flex",
+      background: "#e6e6e6",
+    },
+  }));
+
+  const classes = useStyles();
 
   useEffect(() => {}, [props]);
 
   return (
     <>
       {props.list ? (
-        <>
+        <div>
           <Drawer
             open={props.openSideBar}
             variant="persistent"
@@ -45,16 +69,19 @@ const SubSidebar = (props) => {
             }}
           >
             <Toolbar />
-            <Box sx={{ overflow: "auto" }} style={{ marginTop: "5%" }}>
+            <Box sx={{ overflow: "auto" }} style={{ marginTop: "1%" }}>
               <List>
                 {props.list.sub_list.map((text, index) => (
                   <>
                     {props.list.sub_list ? (
-                      <>
-                        <Link to={text.path}>
+                      <div key={text.name}>
+                        <NavLink
+                          to={text.path}
+                          style={{ textDecoration: "none" }}
+                          activeClassName={classes.listStyleActive}
+                        >
                           <ListItem
                             button
-                            key={text.name}
                             sy={{ boxShadow: 2 }}
                             style={{ fontSize: "48px" }}
                           >
@@ -73,8 +100,8 @@ const SubSidebar = (props) => {
                               </ListItemText>
                             </div>
                           </ListItem>
-                        </Link>
-                      </>
+                        </NavLink>
+                      </div>
                     ) : (
                       <></>
                     )}
@@ -107,7 +134,7 @@ const SubSidebar = (props) => {
               </List>
             </Box>
           </Drawer>
-        </>
+        </div>
       ) : (
         <></>
       )}
