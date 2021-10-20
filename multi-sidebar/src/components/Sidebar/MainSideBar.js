@@ -46,7 +46,9 @@ const MainSideBar = () => {
   const [listIndex, setlistIndex] = useState(0);
   const [openSubSideBar, setOpenSubSideBar] = useState(false);
 
-  useEffect(() => {}, [listIndex]);
+  console.log(listIndex.name);
+
+  useEffect(() => {}, [listIndex, openSubSideBar]);
 
   return (
     <div>
@@ -89,16 +91,6 @@ const MainSideBar = () => {
                     { name: "A 6" },
                     { name: "A 7" },
                     { name: "A 8" },
-                    { name: "A 9" },
-                    { name: "A 1" },
-                    { name: "A 2" },
-                    { name: "A 3" },
-                    { name: "A 4" },
-                    { name: "A 5" },
-                    { name: "A 6" },
-                    { name: "A 7" },
-                    { name: "A 8" },
-                    { name: "A 9" },
                   ],
                 },
                 {
@@ -152,18 +144,6 @@ const MainSideBar = () => {
                     { name: "E 4" },
                     { name: "E 5" },
                     { name: "E 6" },
-                    { name: "E 7" },
-                    { name: "E 8" },
-                    { name: "E 9" },
-                    { name: "E 1" },
-                    { name: "E 2" },
-                    { name: "E 3" },
-                    { name: "E 4" },
-                    { name: "E 5" },
-                    { name: "E 6" },
-                    { name: "E 7" },
-                    { name: "E 8" },
-                    { name: "E 9" },
                   ],
                 },
                 {
@@ -215,7 +195,14 @@ const MainSideBar = () => {
                     key={index}
                     onClick={() => {
                       setlistIndex(data);
-                      setOpenSubSideBar(true);
+
+                      if (openSubSideBar === false) {
+                        setOpenSubSideBar(true);
+                      } else if (data.name != listIndex.name) {
+                        setOpenSubSideBar(true);
+                      } else {
+                        setOpenSubSideBar(false);
+                      }
                     }}
                     style={{ fontSize: "48px", padding: "1rem" }}
                     className={`${classes.listStyle} ${classes.sideBarIconSyle}`}
