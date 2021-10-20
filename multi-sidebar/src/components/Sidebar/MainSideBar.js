@@ -46,8 +46,6 @@ const MainSideBar = () => {
   const [listIndex, setlistIndex] = useState(0);
   const [openSubSideBar, setOpenSubSideBar] = useState(false);
 
-  console.log(listIndex.name);
-
   useEffect(() => {}, [listIndex, openSubSideBar]);
 
   return (
@@ -195,7 +193,6 @@ const MainSideBar = () => {
                     key={index}
                     onClick={() => {
                       setlistIndex(data);
-
                       if (openSubSideBar === false) {
                         setOpenSubSideBar(true);
                       } else if (data.name != listIndex.name) {
