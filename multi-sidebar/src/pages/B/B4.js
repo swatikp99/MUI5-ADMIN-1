@@ -9,8 +9,8 @@ const B4 = () => {
   return (
     <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
       <Toolbar />
+      <h1 style={{ textAlign: "center" }}>B4</h1>
       <Typography paragraph>
-        <h1>B4</h1>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus
         non enim praesent elementum facilisis leo vel. Risus at ultrices mi

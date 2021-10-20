@@ -22,6 +22,9 @@ import { Link } from "react-router-dom";
 const drawerWidth = 180;
 
 const SubSidebar = (props) => {
+
+  useEffect(() => {}, [props]);
+
   return (
     <>
       {props.list ? (
@@ -51,7 +54,7 @@ const SubSidebar = (props) => {
                         <Link to={text.path}>
                           <ListItem
                             button
-                            key={index}
+                            key={text.name}
                             sy={{ boxShadow: 2 }}
                             style={{ fontSize: "48px" }}
                           >

@@ -9,6 +9,13 @@ import B2 from "../pages/B/B2";
 import B3 from "../pages/B/B3";
 import B4 from "../pages/B/B4";
 
+import C1 from "../pages/C/C1";
+import C2 from "../pages/C/C2";
+import C3 from "../pages/C/C3";
+import C4 from "../pages/C/C4";
+
+import Test from '../pages/Test'
+
 var SidebarRoutes = [
   {
     path: "/a/a1",
@@ -32,88 +39,26 @@ var SidebarRoutes = [
       { path: "/b/b4", name: "B 4", component: B4 },
     ],
   },
-  // {
-  //   name: "C",
-  //   sub_list: [
-  //     { name: "C 1" },
-  //     { name: "C 2" },
-  //     { name: "C 3" },
-  //     { name: "C 4" },
-  //     { name: "C 5" },
-  //     { name: "C 6" },
-  //     { name: "C 7" },
-  //     { name: "C 8" },
-  //     { name: "C 9" },
-  //   ],
-  // },
-  // {
-  //   name: "D",
-  //   sub_list: [
-  //     { name: "D 1" },
-  //     { name: "D 2" },
-  //     { name: "D 3" },
-  //     { name: "D 4" },
-  //     { name: "D 5" },
-  //     { name: "D 6" },
-  //     { name: "D 7" },
-  //     { name: "D 8" },
-  //     { name: "D 9" },
-  //   ],
-  // },
-  // {
-  //   name: "E",
-  //   sub_list: [
-  //     { name: "E 1" },
-  //     { name: "E 2" },
-  //     { name: "E 3" },
-  //     { name: "E 4" },
-  //     { name: "E 5" },
-  //     { name: "E 6" },
-  //   ],
-  // },
-  // {
-  //   name: "F",
-  //   sub_list: [
-  //     { name: "F 1" },
-  //     { name: "F 2" },
-  //     { name: "F 3" },
-  //     { name: "F 4" },
-  //     { name: "F 5" },
-  //     { name: "F 6" },
-  //     { name: "F 7" },
-  //     { name: "F 8" },
-  //     { name: "F 9" },
-  //   ],
-  // },
-  // {
-  //   name: "G",
-  //   sub_list: [
-  //     { name: "G 1" },
-  //     { name: "G 2" },
-  //     { name: "G 3" },
-  //     { name: "G 4" },
-  //     { name: "G 5" },
-  //     { name: "G 6" },
-  //     { name: "G 7" },
-  //     { name: "G 8" },
-  //     { name: "G 9" },
-  //   ],
-  // },
-  // {
-  //   name: "H",
-  //   sub_list: [
-  //     { name: "H 1" },
-  //     { name: "H 2" },
-  //     { name: "H 3" },
-  //     { name: "H 4" },
-  //     { name: "H 5" },
-  //     { name: "H 6" },
-  //     { name: "H 7" },
-  //     { name: "H 8" },
-  //     { name: "H 9" },
-  //   ],
-  // },
-  { path: "/", pathTo: "/", name: "", redirect: true },
+  {
+    path: "/c/c1",
+    name: "C",
+    component: C1,
+    sub_list: [
+      { path: "/c/c1", name: "C 1", component: C1 },
+      { path: "/c/c2", name: "C 2", component: C2 },
+      { path: "/c/c3", name: "C 3", component: C3 },
+      { path: "/c/c4", name: "C 4", component: C4 },
+    ],
+  },
+  {
+    path: "/d/test",
+    name: "D",
+    component: Test,
+    sub_list: [
+      { path: "/d/test", name: "Test", component: Test }
+    ],
+  },
+  // { path: "/", pathTo: "/", name: "", redirect: true },
 ];
 
 export default SidebarRoutes;

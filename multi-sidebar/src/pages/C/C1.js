@@ -5,11 +5,11 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
-const B3 = () => {
+const C1 = () => {
   return (
     <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
       <Toolbar />
-      <h1 style={{ textAlign: "center" }}>B3</h1>
+      <h1 style={{ textAlign: "center" }}>C1</h1>
       <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus
@@ -42,4 +42,4 @@ const B3 = () => {
   );
 };
 
-export default B3;
+export default C1;
