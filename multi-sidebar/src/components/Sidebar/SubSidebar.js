@@ -18,7 +18,7 @@ import MailIcon from "@mui/icons-material/Mail";
 // * React router dom
 import { NavLink } from "react-router-dom";
 
-const drawerWidth = 180;
+const drawerWidth = 200;
 
 const SubSidebar = (props) => {
   const useStyles = makeStyles((theme) => ({
@@ -41,7 +41,7 @@ const SubSidebar = (props) => {
     },
     listStyleActive: {
       display: "flex",
-      background: "#e6e6e6",
+      background: "#ebeeff",
     },
   }));
 
@@ -65,6 +65,8 @@ const SubSidebar = (props) => {
                 boxSizing: "border-box",
                 marginLeft: "110px",
                 zIndex: "999",
+                boxShadow: "10px 7px 29px 0px rgba(100, 100, 111, 0.2)",
+                border: "5px solid white",
               },
             }}
           >

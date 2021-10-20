@@ -11,7 +11,7 @@ const PageWrapper = (props) => {
         <Box
           style={{
             backgroundColor: "#ffffff",
-            boxShadow: "17px 17px 40px -37px rgba(0,0,0,0.75)",
+            boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
           }}
           component="main"
           sx={{ p: 4, m: 4 }}

@@ -1,40 +1,43 @@
-import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import { makeStyles } from "@mui/styles";
+
+import UserAccountMenu from "./UserAccountMenu";
+
+import FontDownloadOutlinedIcon from "@mui/icons-material/FontDownloadOutlined";
 
 const Header = () => {
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      display: "flex",
-      backgroundColor: "white",
-    },
-    appBar: {
-      padding: "0",
-      backgroundColor: "#ffffff",
-      color: "#000000",
-    },
-  }));
-  const classes = useStyles();
-
   return (
-    <Box sx={{ flexGrow: 1, boxShadow: 0 }}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        className={classes.appBar}
         position="fixed"
+        style={{
+          color: "#F7F7F7",
+          backgroundColor: "#ffffff",
+          padding: "0.1rem",
+        }}
         sx={{
           zIndex: (theme) => theme.zIndex.drawer + 1,
-          boxShadow: 1,
-          color: "primary.main",
+          boxShadow:
+            "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
         }}
       >
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            Clipped drawer
+        <Toolbar sx={{ mx: 4 }}>
+          <FontDownloadOutlinedIcon
+            style={{ fontSize: "3rem", marginTop: "0", color: "#ef9273" }}
+          />
+          <Typography variant="h6" style={{}}>
+            <strong
+              style={{
+                color: "#ef9273",
+                fontSize: "1rem",
+              }}
+            >
+              DMIN
+            </strong>
           </Typography>
+          <UserAccountMenu />
         </Toolbar>
       </AppBar>
     </Box>

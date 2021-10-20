@@ -29,7 +29,6 @@ const MainSideBar = (props) => {
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
-      backgroundColor: "white",
     },
     sideBarIconSyle: {
       fontSize: "32px",
@@ -44,10 +43,6 @@ const MainSideBar = (props) => {
       justifyContent: "center",
       fontSize: "48px",
     },
-    listStyleActive: {
-      display: "flex",
-      background: "#e6e6e6",
-    },
   }));
 
   const classes = useStyles();
@@ -60,7 +55,11 @@ const MainSideBar = (props) => {
 
   const location = useLocation();
 
-  console.log(location.pathname);
+  console.log("Location path => ", location.pathname);
+
+  const firstPath = location.pathname.split("/")[1];
+
+  console.log("NEW PATH +> ", firstPath);
 
   return (
     <div>
@@ -79,6 +78,9 @@ const MainSideBar = (props) => {
             [`& .MuiDrawer-paper`]: {
               width: drawerWidth,
               boxSizing: "border-box",
+              zIndex: "999",
+              border: "5px solid white",
+              boxShadow: "0px 7px 29px 0px rgba(100, 100, 111, 0.2)",
             },
           }}
         >
@@ -93,11 +95,7 @@ const MainSideBar = (props) => {
             <List>
               {props.routes.map((data, index) => (
                 <div key={data.name}>
-                  <NavLink
-                    to={data.path}
-                    style={{ textDecoration: "none" }}
-                    activeClassName={classes.listStyleActive}
-                  >
+                  <NavLink to={data.path} style={{ textDecoration: "none" }}>
                     <ListItem
                       button
                       onClick={() => {
@@ -110,7 +108,12 @@ const MainSideBar = (props) => {
                           setOpenSubSideBar(false);
                         }
                       }}
-                      style={{ fontSize: "48px", padding: "1rem" }}
+                      style={{
+                        fontSize: "48px",
+                        padding: "1rem",
+                        backgroundColor: "#ebeeff",
+                        marginBottom: "5px",
+                      }}
                       className={`${classes.listStyle} ${classes.sideBarIconSyle}`}
                     >
                       <DashboardOutlinedIcon
