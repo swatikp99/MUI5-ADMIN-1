@@ -1,3 +1,7 @@
+// * icons
+import AppsIcon from '@mui/icons-material/Apps';
+import StorageSharpIcon from '@mui/icons-material/StorageSharp';
+
 // * Pages
 import A1 from "../pages/A/A1";
 import A2 from "../pages/A/A2";
@@ -14,10 +18,17 @@ import C2 from "../pages/C/C2";
 import C3 from "../pages/C/C3";
 import C4 from "../pages/C/C4";
 
+// * icon color
+const iconColor = "#6e6500";
+const iconSize = "2rem";
+
 var SidebarRoutes = [
   {
     path: "/a/a1",
     name: "A",
+    icon: (
+      <AppsIcon style={{ color: iconColor, fontSize: iconSize }} />
+    ),
     component: A1,
     sub_list: [
       { path: "/a/a1", name: "A 1", component: A1 },
@@ -30,6 +41,9 @@ var SidebarRoutes = [
     path: "/b/b1",
     name: "B",
     component: B1,
+    icon: (
+      <StorageSharpIcon style={{ color: iconColor, fontSize: iconSize }} />
+    ),
     sub_list: [
       { path: "/b/b1", name: "B 1", component: B1 },
       { path: "/b/b2", name: "B 2", component: B2 },

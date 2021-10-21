@@ -35,8 +35,10 @@ const MainSideBar = (props) => {
       padding: "2rem 0",
       cursor: "pointer",
     },
-
     listStyle: {
+      borderTop: "5px solid white",
+      borderRight: "5px solid white",
+      borderLeft: "5px solid white",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -71,7 +73,7 @@ const MainSideBar = (props) => {
 
         {/* DRAWER */}
         <Drawer
-          variant={openOrCLoseDrawer}
+          variant="permanent"
           sx={{
             width: drawerWidth,
             flexShrink: 0,
@@ -79,7 +81,6 @@ const MainSideBar = (props) => {
               width: drawerWidth,
               boxSizing: "border-box",
               zIndex: "999",
-              border: "5px solid white",
               boxShadow: "0px 7px 29px 0px rgba(100, 100, 111, 0.2)",
             },
           }}
@@ -111,15 +112,14 @@ const MainSideBar = (props) => {
                       style={{
                         fontSize: "48px",
                         padding: "1rem",
-                        backgroundColor: "#ebeeff",
-                        marginBottom: "5px",
+                        backgroundColor: "#fffcdb",
+                        // marginBottom: "5px",
                       }}
                       className={`${classes.listStyle} ${classes.sideBarIconSyle}`}
                     >
-                      <DashboardOutlinedIcon
-                        sx={{ color: "primary.main" }}
-                        style={{ fontSize: "2rem" }}
-                      />
+                      {/* ICONS */}
+                      {data.icon}
+                      {/* ===== */}
                       <div
                         style={{
                           display: "flex",
@@ -133,7 +133,7 @@ const MainSideBar = (props) => {
                     </ListItem>
                   </NavLink>
 
-                  <Divider />
+                  {/* <Divider /> */}
                 </div>
               ))}
               <Button

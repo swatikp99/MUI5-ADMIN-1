@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@mui/styles";
+
 import Header from "../Header/Header";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -54,8 +55,10 @@ const SubSidebar = (props) => {
       {props.list ? (
         <div>
           <Drawer
+            direction="left"
+            easing={{ enter:" easing.easeOut", exit: "easing.sharp" }}
             open={props.openSideBar}
-            variant="persistent"
+            variant="permanent"
             key={props.name}
             sx={{
               width: drawerWidth,
